@@ -6,7 +6,7 @@ const ContactSchema = Yup.object().shape({
     firstName: Yup.string().min(2, "Too Short!").max(73, "Too Long!").required('FirstnameisRequired'),
     lastName: Yup.string().min(2, "Too Short!").max(73, "Too Long!").required('LastnameisRequired'),
     email: Yup.string().email('Invalid email').required('EmailisRequired'),
-    message: Yup.string().min(2, "Too Short!").max(1000, "maximum_1000 Charecteras!").required('MessageisRequired'),
+    message: Yup.string().min(20, "Too Short!").max(1000, "maximum_1000 Charecteras!").required('MessageisRequired'),
     queryType: Yup.string().required('QueryisRequired'),
     consent: Yup.bool().oneOf([true], 'Consent is required').required('ConsentisRequired')
 });
